@@ -69,7 +69,8 @@ function logoutUser() {
     sessionStorage.clear();
     $('#loggedInUser').text('');
     showMenuHideLinks();
-    showView('viewHome');
+    // showView('viewHome');
+    listItems();
     showInfo('Logout successful.');
 }
 
