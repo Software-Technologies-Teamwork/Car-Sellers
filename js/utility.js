@@ -3,8 +3,8 @@ function handleAjaxError(response) {
     if (response.readyState === 0) {
         errorMsg = "Cannot connect due to network error.";
     } else if (response.responseJSON &&
-        response.responseJSON.description) {
-        errorMsg = response.responseJSON.description;
+        response.responseJSON.model) {
+        errorMsg = response.responseJSON.model;
     } else {
         errorMsg = response.status + ' (' + response.statusText + ')';
     }
