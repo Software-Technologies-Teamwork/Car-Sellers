@@ -1,7 +1,6 @@
 function startApp() {
     // sessionStorage.clear(); // Logout user after refresh web page
     showMenuHideLinks();
-    showView('viewHome');
     listItems();
 
     if (sessionStorage.getItem('username')) {
