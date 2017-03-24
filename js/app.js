@@ -21,7 +21,10 @@ function startApp() {
     $('#linkHome').click(showHomeView);
     $('#linkLogin').click(showLoginView);
     $('#linkRegister').click(showRegisterView);
-    $('#linkListAds').click(listItems);
+    $('#linkListAds').click(function () {
+        listItems();
+        $('#viewHome').hide();
+    });
     $('#linkCreateAd').click(showCreateAdView);
     $('#linkLogout').click(logoutUser);
 
