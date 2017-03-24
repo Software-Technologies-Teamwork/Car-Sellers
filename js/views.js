@@ -23,16 +23,19 @@ function showMenuHideLinks() {
 
 function showHomeView() {
     showView('viewHome');
+    listItems();
 }
 
 function showLoginView() {
     showView('viewLogin');
-    $('#formLogin').trigger('reset')
+    $('#formLogin').trigger('reset');
+    $('input[name=username]').focus();
 }
 
 function showRegisterView() {
     showView('viewRegister');
-    $('#formRegister').trigger('reset')
+    $('#formRegister').trigger('reset');
+    $('input[name=username]').focus();
 }
 
 function showCreateAdView() {
