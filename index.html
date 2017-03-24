@@ -48,6 +48,7 @@
 </div>
 </header>
 <main>
+	
     <section id="loadingBox" class="loadingBox">Loading ...</section>
 
     <section id="infoBox" class="infoBox">Info</section>
@@ -62,13 +63,17 @@
     <section id="viewLogin" class="viewLogin">
         <h1 class="titleForm">Please login</h1>
         <form id="formLogin" class="form">
-            <div>Username:</div>
-            <div><input type="text" name="username" tabindex="-1" required/></div>
-            <div>Password:</div>
-            <div><input type="password" name="passwd" required /></div>
-            <div><input type="submit" id="buttonLoginUser" value="Login" /></div>
+            <div class="form-group">
+            <label class="control-label" for="inputUsername">Username</label>
+            <div><input type="text" placeholder="username"class="form-control input-username" name="username" tabindex="-1" required/></div></div>
+            <div class="form-group">
+            <label class="control-label" for="inputPassword">Password</label>
+            <div><input type="password" placeholder="password" class="form-control input-password" name="passwd" required /></div>
+         
+			<button type="submit" class="btn btn-default" id="buttonLoginUser" value="Login">Submit</button>
         </form>
     </section>
+				
 
     <section id="viewRegister" class="viewRegister">
         <h1 class="titleForm">Please register here</h1>
@@ -79,10 +84,13 @@
             <div><input type="password" name="passwd" required /></div>
             <div><input type="submit" id="buttonRegisterUser" value="Register" /></div>
         </form>
+		
+		
     </section>
 
     <section id="viewAds" class="viewAds">
         <h1 class="titleForm">Cars</h1>
+
         <div id="ads" class="ads"></div>
     </section>
 
@@ -137,5 +145,6 @@
 </main>
 <footer>Footer</footer>
 
+  
 </body>
 </html>
