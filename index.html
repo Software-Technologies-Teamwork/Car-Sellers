@@ -2,7 +2,19 @@
 <html>
 <head>
     <title>Car Sellers</title>
-    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'><!-- active -->
+	<link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet">
+	
+	<link rel="stylesheet" href="fontcss/font-awesome.min.css">
+	<!-- bootsrtap css -->
+	<link type="text/css" rel="stylesheet" href="styles/bootstrap.css">
+	<!-- main css styles -->
+	<link type="text/css" rel="stylesheet" href="styles/styles.css">
+	<!-- jquery scripts -->
+     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<!-- main scripts -->
+	<script type="text/javascript" src="scripts/main.js"></script>
+    <script type="text/javascript" src="scripts/bootstrap.js"></script>
     <script src="js/auth.js"></script>
     <script src="js/ajax.js"></script>
     <script src="js/utility.js"></script>
@@ -12,17 +24,29 @@
 
 <body>
 <header id="menu" class="menu">
-    <a href="#" id="linkHome" class="menu-item" >Home</a>
-    <a href="#" id="linkLogin" class="menu-item">Login</a>
-    <a href="#" id="linkRegister" class="menu-item">Register</a>
-    <a href="#" id="linkListAds" class="menu-item">View All Cars</a>
-    <a href="#" id="linkCreateAd" class="menu-item">Post Advertisement</a>
-    <a href="#" id="linkLogout" class="menu-item">Logout</a>
-    
-    <span id="loggedInUser" class="menu-item"></span>
-    <div></div>
+<div class="navbar navbar-default navbar-fixed-top text-uppercase">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" id="linkHome" class="menu-item" >Home</a></li>
+                    <li><a href="#" id="linkLogin" class="menu-item">Login</a></li>
+                    <li><a href="#" id="linkRegister" class="menu-item">Register</a></li>
+                    <li><a href="#" id="linkListAds" class="menu-item">View All Cars</a></li>
+                    <li><a href="#" id="linkCreateAd" class="menu-item">Post Advertisement</a></li>
+                    <li><a href="#" id="linkLogout" class="menu-item">Logout</a></li>
+                    <span id="loggedInUser" class="menu-item"></span>
+            </ul>
+        </div>
+    </div>
+</div>
 </header>
-
 <main>
     <section id="loadingBox" class="loadingBox">Loading ...</section>
 
@@ -112,7 +136,6 @@
     </script>
 </main>
 <footer>Footer</footer>
-<div><h1>JUST COMIT</h1></div>
 
 </body>
 </html>
