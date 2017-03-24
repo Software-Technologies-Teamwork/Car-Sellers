@@ -18,8 +18,9 @@ function loadAdsSuccess(adverts) {
         showInfo('Cars loaded.');
         let advertsTable = $('<table>')
             .append($('<tr>')
-                .append('<th>Title</th><th>Description</th>',
-                    '<th>Publisher</th><th>Date Published</th>',
+                .append('<th>Make</th><th>Model</th>',
+                    '<th>Km up to</th><th>Fuel type</th>,' +
+                    '<th>Date Published</th><th>Publisher</th>',
                     '<th>Price</th><th>Actions</th>'));
         for (let advert of adverts) {
             appendTableRow(advert, advertsTable);
@@ -40,10 +41,12 @@ function loadAdsSuccess(adverts) {
         }
 
         let tr = $('<tr>').append(
-            $('<td>').text(advert.title),
-            $('<td>').text(advert.description),
-            $('<td>').text(advert.publisher),
+            $('<td>').text(advert.make),
+            $('<td>').text(advert.model),
+            $('<td>').text(advert.km),
+            $('<td>').text(advert.fuelType),
             $('<td>').text(advert.datePublished),
+            $('<td>').text(advert.publisher),
             $('<td>').text(advert.price + " lv"),
             $('<td>').append(links)
         );
@@ -72,10 +75,12 @@ function deleteAdvert(advert) {
 function createAdvert(e) {
     e.preventDefault();
     let advertData = {
-        title: $('#formCreateAd input[name=title]').val(),
-        description: $('#formCreateAd textarea[name=description]').val(),
-        publisher: sessionStorage.getItem('username'),
+        make: $('#formCreateAd input[name=make]').val(),
+        model: $('#formCreateAd input[name=model]').val(),
+        km: $('#formCreateAd input[name=km]').val(),
+        fuelType: $('#formCreateAd input[name=fuelType]').val(),
         datePublished: $('#formCreateAd input[name=datePublished]').val(),
+        publisher: sessionStorage.getItem('username'),
         price: $('#formCreateAd input[name=price]').val(),
         image: $('#formCreateAd input[name=image]').val()
     };
@@ -95,8 +100,10 @@ function createAdvert(e) {
 //Edit
 function loadAdvertForEdit(advert) {
     $('#formEditAd input[name=id]').val(advert._id);
-    $('#formEditAd input[name=title]').val(advert.title);
-    $('#formEditAd textarea[name=description]').val(advert.description);
+    $('#formEditAd input[name=make]').val(advert.make);
+    $('#formEditAd input[name=model]').val(advert.model);
+    $('#formEditAd input[name=km]').val(advert.km);
+    $('#formEditAd input[name=fuelType]').val(advert.fuelType);
     $('#formEditAd input[name=datePublished]').val(advert.datePublished);
     $('#formEditAd input[name=price]').val(advert.price);
     $('#formEditAd input[name=image]').val(advert.image);
@@ -105,10 +112,12 @@ function loadAdvertForEdit(advert) {
 function editAdvert(e) {
     e.preventDefault();
     let advertData = {
-        title: $('#formEditAd input[name=title]').val(),
-        description: $('#formEditAd textarea[name=description]').val(),
-        publisher: sessionStorage.getItem('username'),
+        make: $('#formEditAd input[name=make]').val(),
+        model: $('#formEditAd input[name=model]').val(),
+        km: $('#formEditAd input[name=km]').val(),
+        fuelType: $('#formEditAd input[name=fuelType]').val(),
         datePublished: $('#formEditAd input[name=datePublished]').val(),
+        publisher: sessionStorage.getItem('username'),
         price: $('#formEditAd input[name=price]').val(),
         image: $('#formEditAd input[name=image]').val(),
     };
@@ -146,9 +155,9 @@ function displayAdvert(advertId) {
             $('<label>').text('Price:'),
             $('<div>').text(advert.price + " lv"),
             $('<label>').text('Title:'),
-            $('<h1>').text(advert.title),
+            $('<h1>').text(advert.make),
             $('<label>').text('Description:'),
-            $('<p>').text(advert.description),
+            $('<p>').text(advert.model),
             $('<label>').text('Publisher:'),
             $('<div>').text(advert.publisher),
             $('<label>').text('Date:'),
