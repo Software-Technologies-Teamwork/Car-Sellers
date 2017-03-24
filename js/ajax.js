@@ -2,6 +2,7 @@ function listItems() {
     $('#ads').empty();
     showView('viewAds');
     $('#viewHome').show();
+    
     $.ajax({
         method: 'GET',
         url: kinveyBaseUrl + "appdata/" + kinveyAppId + "/listOfAdverts",
@@ -154,10 +155,14 @@ function displayAdvert(advertId) {
             $('<br>'),
             $('<label>').text('Price:'),
             $('<div>').text(advert.price + " lv"),
-            $('<label>').text('Title:'),
+            $('<label>').text('Make:'),
             $('<h1>').text(advert.make),
-            $('<label>').text('Description:'),
+            $('<label>').text('Model:'),
             $('<p>').text(advert.model),
+            $('<label>').text('Km up to:'),
+            $('<div>').text(advert.km),
+            $('<label>').text('Fuel Type:'),
+            $('<div>').text(advert.fuelType),
             $('<label>').text('Publisher:'),
             $('<div>').text(advert.publisher),
             $('<label>').text('Date:'),
