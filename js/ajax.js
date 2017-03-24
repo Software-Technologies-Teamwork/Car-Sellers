@@ -1,6 +1,7 @@
 function listItems() {
     $('#ads').empty();
     showView('viewAds');
+    $('#viewHome').show();
     $.ajax({
         method: 'GET',
         url: kinveyBaseUrl + "appdata/" + kinveyAppId + "/listOfAdverts",
@@ -43,7 +44,7 @@ function loadAdsSuccess(adverts) {
             $('<td>').text(advert.description),
             $('<td>').text(advert.publisher),
             $('<td>').text(advert.datePublished),
-            $('<td>').text(advert.price),
+            $('<td>').text(advert.price + " lv"),
             $('<td>').append(links)
         );
         advertsTable.append(tr);
@@ -63,7 +64,7 @@ function deleteAdvert(advert) {
 
         function deleteAdvertSuccess() {
             listItems();
-            showInfo('Car delete.')
+            showInfo('Advert delete.')
         }
     }
 }
@@ -88,7 +89,7 @@ function createAdvert(e) {
 
     function successCreateAdvert() {
         listItems();
-        showInfo('Book created.')
+        showInfo('Advert created.')
     }
 }
 //Edit
@@ -140,14 +141,14 @@ function displayAdvert(advertId) {
     function displayAdvertSuccess(advert) {
         let html = $('<div>');
         html.append(
-            $('<img>').attr('src', advert.image),
+            $('<img>').attr({src: advert.image, width: "120px", height: "120px"}),
             $('<br>'),
             $('<label>').text('Price:'),
-            $('<div>').text(advert.price),
+            $('<div>').text(advert.price + " lv"),
             $('<label>').text('Title:'),
             $('<h1>').text(advert.title),
             $('<label>').text('Description:'),
-            $('<p>').text(advert.escription),
+            $('<p>').text(advert.description),
             $('<label>').text('Publisher:'),
             $('<div>').text(advert.publisher),
             $('<label>').text('Date:'),
