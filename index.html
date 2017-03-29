@@ -5,7 +5,7 @@
 	<link href='http://fonts.googleapis.com/css?family=Merienda+One' rel='stylesheet' type='text/css'><!-- active -->
 	<link href="https://fonts.googleapis.com/css?family=Ranga" rel="stylesheet">
 	
-	<link rel="stylesheet" href="bootsrtap/fontcss/font-awesome.min.css">
+	<link rel="stylesheet" href="bootstrap/fontcss/font-awesome.min.css">
 	<!-- bootsrtap css -->
 	<link type="text/css" rel="stylesheet" href="styles/bootstrap.css">
 	<!-- main css styles -->
@@ -55,7 +55,7 @@
 
     <section id="errorBox" class="errorBox">Error</section>
 
-    <section id="viewHome" class="viewHome">
+    <p id="viewHome" class="viewHome">
         <h1 class="title">Welcome</h1>
         <p class="body-text"><h3 style="text-align:center">Welcome to our sales car  site</h3></p>
     </section>
@@ -64,13 +64,14 @@
         <h1 class="titleForm">Please login</h1>
         <form id="formLogin" class="form">
             <div class="form-group">
-            <label class="control-label" for="inputUsername">Username</label>
-            <div><input type="text" placeholder="username"class="form-control input-username" name="username" tabindex="-1" required/></div></div>
+            <label class="control-label" for="username">Username</label>
+            <div><input type="text" placeholder="username" class="form-control input-username" name="username" id="username" tabindex="-1" required/></div></div>
             <div class="form-group">
-            <label class="control-label" for="inputPassword">Password</label>
-            <div><input type="password" placeholder="password" class="form-control input-password" name="passwd" required /></div>
+            <label class="control-label" for="password">Password</label>
+            <div><input type="password" placeholder="password" class="form-control input-password" name="passwd" id="password" required /></div>
          
-			<button type="submit" class="btn btn-default" id="buttonLoginUser" value="Login">Submit</button>
+			<input type="submit" class="btn btn-default" id="buttonLoginUser" value="Login">
+            </div>
         </form>
     </section>
 				
