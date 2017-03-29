@@ -9,8 +9,7 @@ display:inline;
 border: 1px solid gray;
 width:340px;
 height:220px;
-margin-left:500px;
-margin-top:50px;
+margin: 50px auto;
 background-color:lightgray;
 text-align:center;
 }
