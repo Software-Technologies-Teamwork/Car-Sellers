@@ -13,46 +13,29 @@ function listItems() {
 
 function loadAdsSuccess(adverts) {
     $('#ads').empty();
-    if (adverts.length == 0) {
+    if (adverts.length === 0) {
         $('#ads').text('No adverts in the list.');
     } else {
         showInfo('Cars loaded.');
-        let advertsTable = $('<table>')
-            .append($('<tr>')
-                .append('<th>Make</th><th>Model</th>',
-                    '<th>Km up to</th><th>Fuel type</th>,' +
-                    '<th>Date Published</th><th>Publisher</th>',
-                    '<th>Price</th><th>Actions</th>'));
+        let container = $('#ads');
+
         for (let advert of adverts) {
-            appendTableRow(advert, advertsTable);
+            appendCar(advert, container);
         }
-        $('#ads').append(advertsTable);
     }
-    function appendTableRow(advert, advertsTable) {
+    function appendCar(advert, container) {
         let links = [];
         let readMoreLink = $('<a href="#">Read More</a>')
             .click(displayAdvert.bind(this, advert._id));
-        links = [readMoreLink];
-        if (advert._acl.creator == sessionStorage['userId']) {
-            let deleteLink = $('<a href="#">Delete</a>')
-                .click(deleteAdvert.bind(this, advert));
-            let editLink = $('<a href="#">Edit</a>')
-                .click(loadAdvertForEdit.bind(this, advert));
-            links = [readMoreLink, ' ', deleteLink, ' ', editLink];
-        }
 
-        let tr = $('<tr>').append(
-            $('<td>').text(advert.make),
-            $('<td>').text(advert.model),
-            $('<td>').text(advert.km),
-            $('<td>').text(advert.fuelType),
-            $('<td>').text(advert.datePublished),
-            $('<td>').text(advert.publisher),
-            $('<td>').text(advert.price + " lv"),
-            $('<td>').append(links)
+        let ul = $('<ul>').append(
+            $('<li>').append($('<img>').attr({src: advert.image, width: "120px", height: "120px"})),
+            $('<li>').text(advert.make + " " + advert.model),
+            $('<li>').text("Price: " + advert.price + " lv"),
+            $('<li>').append(readMoreLink)
         );
-        advertsTable.append(tr);
 
+        container.append(ul);
     }
 }
 //Delete
@@ -133,7 +116,7 @@ function editAdvert(e) {
         .catch(handleAjaxError);
 
     function editAdvertSuccess() {
-        listItems();
+        listMyAds();
         showInfo('Advert edited.')
     }
 }
@@ -170,5 +153,52 @@ function displayAdvert(advertId) {
         );
         html.appendTo($('#viewDetailsAd'));
         showView('viewDetailsAd');
+    }
+}
+
+function listMyAds() {
+    $('#myAds').empty();
+    showView('viewMyAds');
+
+    $.ajax({
+        method: 'GET',
+        url: kinveyBaseUrl + "appdata/" + kinveyAppId + "/listOfAdverts",
+        headers: kinveyAdminAuth,
+    }).then(loadMyAdsSuccess)
+        .catch(handleAjaxError);
+
+    function loadMyAdsSuccess(adverts) {
+        $('#myAds').empty();
+        if (adverts.length === 0) {
+            $('#ads').text('No adverts in the list.');
+        } else {
+            showInfo('Cars loaded.');
+            let container = $('#myAds');
+
+            for (let advert of adverts) {
+                if (advert._acl.creator !== sessionStorage['userId']) {
+                    continue;
+                }
+                appendCar(advert, container);
+            }
+
+        }
+        function appendCar(advert, container) {
+            let links = [];
+            let deleteLink = $('<a href="#">Delete</a>')
+                .click(deleteAdvert.bind(this, advert));
+            let editLink = $('<a href="#">Edit</a>')
+                .click(loadAdvertForEdit.bind(this, advert));
+            links = [deleteLink, ' ' , editLink];
+
+            let ul = $('<ul>').append(
+                $('<li>').append($('<img>').attr({src: advert.image, width: "120px", height: "120px"})),
+                $('<li>').text(advert.make + " " + advert.model),
+                $('<li>').text("Price: " + advert.price + " lv"),
+                $('<li>').append(links)
+            );
+
+            container.append(ul);
+        }
     }
 }
