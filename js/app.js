@@ -26,6 +26,7 @@ function startApp() {
         $('#viewHome').hide();
     });
     $('#linkCreateAd').click(showCreateAdView);
+    $('#linkMyAds').click(listMyAds);
     $('#linkLogout').click(logoutUser);
 
     // Bind the form submit buttons
