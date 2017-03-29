@@ -43,14 +43,13 @@ body
 	text-align:center;
 	background-color:#FFF;
 }
-.pricing_table_wdg ul:hover { 
+.pricing_table_wdg ul:hover {
 	-webkit-transform: scale(1.1);
   	-moz-transform: scale(1.1);
   	-o-transform: scale(1.1);
   	-moz-box-shadow:3px 5px 7px rgba(0,0,0,.7);
   	-webkit-box-shadow: 3px 5px 7px rgba(0,0,0,.7);
   	box-shadow:3px 5px 7px rgba(0,0,0,.7);
-	cursor:pointer;
 	background:#d8e9f9;
 }
 .pricing_table_wdg ul li {  
