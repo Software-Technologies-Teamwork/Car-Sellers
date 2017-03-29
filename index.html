@@ -37,12 +37,13 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav navbar-left">
-                    <li><a href="#" id="linkHome" class="menu-item" >Home</a></li>
-                    <li><a href="#" id="linkLogin" class="menu-item">Login</a></li>
-                    <li><a href="#" id="linkRegister" class="menu-item">Register</a></li>
-                    <li><a href="#" id="linkListAds" class="menu-item">View All Cars</a></li>
-                    <li><a href="#" id="linkCreateAd" class="menu-item">Post Advertisement</a></li>
-                    <li><a href="#" id="linkLogout" class="menu-item">Logout</a></li>
+                <li><a href="#" id="linkHome" class="menu-item" >Home</a></li>
+                <li><a href="#" id="linkLogin" class="menu-item">Login</a></li>
+                <li><a href="#" id="linkRegister" class="menu-item">Register</a></li>
+                <li><a href="#" id="linkListAds" class="menu-item">View All Cars</a></li>
+                <li><a href="#" id="linkCreateAd" class="menu-item">Post Advertisement</a></li>
+                <li><a href="#" id="linkMyAds" class="menu-item">My Ads</a></li>
+                <li><a href="#" id="linkLogout" class="menu-item">Logout</a></li>
                     <span id="loggedInUser" class="menu-item"></span>
             </ul>
         </div>
@@ -56,9 +57,15 @@
 
     <section id="errorBox" class="errorBox">Error</section>
 
-    <p id="viewHome" class="viewHome">
+    <section id="viewHome" class="viewHome">
         <h1 class="title">Welcome</h1>
-        <p class="body-text"><h3 style="text-align:center">Welcome to our sales car  site</h3></p>
+        <div class="body-text"><h3 style="text-align:center">Welcome to our sales car  site</h3></div>
+    </section>
+
+    <section id="viewMyAds" class="viewMyAds">
+        <h1 class="titleForm">My Cars</h1>
+
+        <div id="myAds" class="ads pricing_table_wdg"></div>
     </section>
 
     <section id="viewLogin" class="viewLogin">
@@ -85,14 +92,12 @@
             <div><input type="password" name="passwd" required /></div>
             <div><input type="submit" id="buttonRegisterUser" value="Register" /></div>
         </form>
-		
-		
     </section>
 
     <section id="viewAds" class="viewAds">
         <h1 class="titleForm">Cars</h1>
 
-        <div id="ads" class="ads"></div>
+        <div id="ads" class="pricing_table_wdg"></div>
     </section>
 
     <section id="viewCreateAd" class="viewCreateAd">
@@ -101,9 +106,9 @@
             <div>Make:</div>
             <div><input type="text" name="make" required /></div>
             <div>Model:</div>
-            <div><input type="text" name="model" rows="10" required></div>
+            <div><input type="text" name="model" required></div>
             <div>Km up to:</div>
-            <div><input type="text" name="km"  required></div>
+            <div><input type="text" name="km" required></div>
             <div>Fuel Type:</div>
             <div><input type="text" name="fuelType" required></div>
             <div>Date Published:</div>
@@ -140,55 +145,7 @@
             <div><input type="submit" id="buttonEditAd" value="Edit" /></div>
         </form>
     </section>
-	<div class="pricing_table_wdg">
-		<ul>
-			<li>MODEL</li>
-			<li>AUDI A4</li>
-			<li>BMW X3</li>
-			<li>LADA 5</li>
-			<li><a href="" class="buy_now">Buy Now</a></li>
-		</ul>
-		
-		<ul>
-			<li>KM UP TO</li>
-			<li>123 092</li>
-			<li>56 500</li>
-			<li>256 000</li>
-			<li><a href="" class="buy_now">Buy Now</a></li>
-		</ul>
-		
-		<ul>
-			<li>FUEL TYPE</li>
-			<li>DIESEL</li>
-			<li>DIESEL</li>
-			<li>GAS</li>
-			<li><a href="" class="buy_now">Buy Now</a></li>
-		</ul>
-		
-		<ul>
-			<li>DATE PUBLISH</li>
-			<li>2017-03-24</li>
-			<li>2017-03-24</li>
-			<li>2017-03-18</li>
-			<li><a href="" class="buy_now">Buy Now</a></li>
-		</ul>
-		
-		<ul>
-			<li>PUBLISHER</li>
-			<li>ADMIN</li>
-			<li>ADMIN</li>
-			<li>USER</li>
-			<li><a href="" class="buy_now">Buy Now</a></li>
-		</ul>
-		
-		<ul>
-			<li>PRICE</li>
-			<li>5450 BGN</li>
-			<li>19500 BGN</li>
-			<li>1360 BGN</li>
-			<li><a href="" class="buy_now">Buy Now</a></li>
-		</ul>
-	</div>
+
     <script>
         startApp();
     </script>
