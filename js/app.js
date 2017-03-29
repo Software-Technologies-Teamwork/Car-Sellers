@@ -15,7 +15,7 @@ function startApp() {
     $(document).on({
             ajaxStart: () => {$('#loadingBox').show()},
     ajaxStop: () => {$('#loadingBox').hide()}
-});
+    });
 
     // Bind the navigation menu links
     $('#linkHome').click(showHomeView);
