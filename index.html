@@ -73,12 +73,13 @@
         <form id="formLogin" class="form">
             <div class="form-group">
             <label class="control-label" for="username">Username</label>
-            <div><input type="text" placeholder="username" class="form-control input-username" name="username" id="username" tabindex="-1" required/></div></div>
+            <input type="text" placeholder="username" class="form-control input-username" name="username" id="username" tabindex="-1" required/>
+            </div>
             <div class="form-group">
             <label class="control-label" for="password">Password</label>
-            <div><input type="password" placeholder="password" class="form-control input-password" name="passwd" id="password" required /></div>
-			<input type="submit" class="btn btn-default" id="buttonLoginUser" value="Login">
+            <input type="password" placeholder="password" class="form-control input-password" name="passwd" id="password" required />
             </div>
+            <input type="submit" class="btn btn-default" id="buttonLoginUser" value="Login"/>
         </form>
     </section>
 				
@@ -86,11 +87,15 @@
     <section id="viewRegister" class="viewRegister">
         <h1 class="titleForm">Please register here</h1>
         <form id="formRegister" class="form">
-            <div>Username:</div>
-            <div><input type="text" name="username" required /></div>
-            <div>Password:</div>
-            <div><input type="password" name="passwd" required /></div>
-            <div><input type="submit" id="buttonRegisterUser" value="Register" /></div>
+            <div class="form-group">
+            <label class="control-label" for="usernameReg">Username:</label>
+            <div><input type="text" placeholder="username" class="form-control input-username" name="username" id="usernameReg" tabindex="-1" required/></div>
+            </div>
+            <div class="form-group">
+            <label class="control-label" for="passwordReg">Password:</label>
+            <input type="password" placeholder="password" class="form-control input-password" name="passwd" id="passwordReg" required />
+            </div>
+            <input type="submit" class="btn btn-default" id="buttonRegisterUser" value="Register" />
         </form>
     </section>
 
