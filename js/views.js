@@ -11,6 +11,7 @@ function showMenuHideLinks() {
         $('#linkHome').show();
         $('#linkListAds').show();
         $('#linkCreateAd').show();
+        $('#linkMyAds').show();
         $('#linkLogout').show();
     } else {
         //No user logged in
