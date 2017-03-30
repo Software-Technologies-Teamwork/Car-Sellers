@@ -169,20 +169,22 @@ function listMyAds() {
 
     function loadMyAdsSuccess(adverts) {
         $('#myAds').empty();
-        if (adverts.length === 0) {
-            $('#ads').text('No adverts in the list.');
-        } else {
-            showInfo('Cars loaded.');
-            let container = $('#myAds');
+        let isHaveAds = false;
 
-            for (let advert of adverts) {
-                if (advert._acl.creator !== sessionStorage['userId']) {
-                    continue;
-                }
-                appendCar(advert, container);
+        let container = $('#myAds');
+        for (let advert of adverts) {
+            if (advert._acl.creator !== sessionStorage['userId']) {
+                continue;
             }
-
+            isHaveAds = true;
+            appendCar(advert, container);
         }
+        if (isHaveAds) {
+            showInfo('Cars loaded.');
+        } else {
+            $('#myAds').text('No adverts in the list.');
+        }
+
         function appendCar(advert, container) {
             let links = [];
             let deleteLink = $('<a href="#">Delete</a>')
