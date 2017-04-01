@@ -143,26 +143,6 @@ function displayAdvert(advertId) {
             $("<tr>").append($("<td>").text('Publisher:')).append($("<td>").text(advert.publisher)),
             $("<tr>").append($("<td>").text('Date:')).append($("<td>").text(advert.datePublished)));
 
-        //     $('<label>').text('Price:'),
-        //     $('<div>').text(advert.price + " lv"),
-
-        //     $('<label>').text('Make:'),
-        //     $('<h1>').text(advert.make),
-
-        //     $('<label>').text('Model:'),
-        //     $('<p>').text(advert.model),
-
-        //     $('<label>').text('Km up to:'),
-        //     $('<div>').text(advert.km),
-
-        //     $('<label>').text('Fuel Type:'),
-        //     $('<div>').text(advert.fuelType),
-        //     $('<label>').text('Publisher:'),
-        //     $('<div>').text(advert.publisher),
-        //     $('<label>').text('Date:'),
-        //     $('<div>').text(advert.datePublished)
-        // );
-
         table.appendTo($('#viewDetailsAd'));
         showView('viewDetailsAd');
     }
