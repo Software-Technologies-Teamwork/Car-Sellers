@@ -134,7 +134,7 @@ function displayAdvert(advertId) {
     function displayAdvertSuccess(advert) {
         let table  = $('<table>');
         table.append(
-            $("<tr>").append($("<td>").append($('<img>').attr({src: advert.image, width: "120px", height: "120px"}))),
+            $("<tr>").append($("<th>").append($('<img>').attr({src: advert.image, width: "360px", height: "200px"}))),
             $("<tr>").append($("<td>").text('Price:')).append($("<td>").text(advert.price + " lv")),
             $("<tr>").append($("<td>").text('Car brand:')).append($("<td>").text(advert.make)),
             $("<tr>").append($("<td>").text('Model:')).append($("<td>").text(advert.model)),
