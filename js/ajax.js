@@ -132,26 +132,38 @@ function displayAdvert(advertId) {
     $('#viewDetailsAd').empty();
 
     function displayAdvertSuccess(advert) {
-        let html = $('<div>');
-        html.append(
-            $('<img>').attr({src: advert.image, width: "120px", height: "120px"}),
-            $('<br>'),
-            $('<label>').text('Price:'),
-            $('<div>').text(advert.price + " lv"),
-            $('<label>').text('Make:'),
-            $('<h1>').text(advert.make),
-            $('<label>').text('Model:'),
-            $('<p>').text(advert.model),
-            $('<label>').text('Km up to:'),
-            $('<div>').text(advert.km),
-            $('<label>').text('Fuel Type:'),
-            $('<div>').text(advert.fuelType),
-            $('<label>').text('Publisher:'),
-            $('<div>').text(advert.publisher),
-            $('<label>').text('Date:'),
-            $('<div>').text(advert.datePublished)
-        );
-        html.appendTo($('#viewDetailsAd'));
+        let table  = $('<table>');
+        table.append(
+            $("<tr>").append($("<td>").append($('<img>').attr({src: advert.image, width: "120px", height: "120px"}))),
+            $("<tr>").append($("<td>").text('Price:')).append($("<td>").text(advert.price + " lv")),
+            $("<tr>").append($("<td>").text('Car brand:')).append($("<td>").text(advert.make)),
+            $("<tr>").append($("<td>").text('Model:')).append($("<td>").text(advert.model)),
+            $("<tr>").append($("<td>").text('Km up to:')).append($("<td>").text(advert.km)),
+            $("<tr>").append($("<td>").text('Fuel Type:')).append($("<td>").text(advert.fuelType)),
+            $("<tr>").append($("<td>").text('Publisher:')).append($("<td>").text(advert.publisher)),
+            $("<tr>").append($("<td>").text('Date:')).append($("<td>").text(advert.datePublished)));
+
+        //     $('<label>').text('Price:'),
+        //     $('<div>').text(advert.price + " lv"),
+
+        //     $('<label>').text('Make:'),
+        //     $('<h1>').text(advert.make),
+
+        //     $('<label>').text('Model:'),
+        //     $('<p>').text(advert.model),
+
+        //     $('<label>').text('Km up to:'),
+        //     $('<div>').text(advert.km),
+
+        //     $('<label>').text('Fuel Type:'),
+        //     $('<div>').text(advert.fuelType),
+        //     $('<label>').text('Publisher:'),
+        //     $('<div>').text(advert.publisher),
+        //     $('<label>').text('Date:'),
+        //     $('<div>').text(advert.datePublished)
+        // );
+
+        table.appendTo($('#viewDetailsAd'));
         showView('viewDetailsAd');
     }
 }
