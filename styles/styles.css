@@ -13,6 +13,23 @@ margin: 50px auto;
 background-color:lightgray;
 text-align:center;
 }
+#formCreateAd{
+height: 400px;
+}
+#buttonCreateAd{
+margin-top:15px;
+width:70px;
+height:40px;
+background-color:gray;
+color:white;
+border-radius:10px 10px 10px 10px;
+}
+#buttonLoginUser, #buttonRegisterUser{
+margin-right:20px;
+width:80px;
+}
+
+
 input{
 margin-left:25px;
 border:2px solid gray;
@@ -30,7 +47,7 @@ body
 	-webkit-border-radius:4px;
 	float:left;
 	margin-top: 25px;
-	margin-left:220px;
+	margin-left:380px;
 }
 .pricing_table_wdg ul { 
 	list-style:none; 
