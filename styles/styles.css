@@ -13,10 +13,10 @@ margin: 50px auto;
 background-color:lightgray;
 text-align:center;
 }
-#formCreateAd{
+#formCreateAd,#formEditAd{
 height: 400px;
 }
-#buttonCreateAd{
+#buttonCreateAd,#buttonEditAd{
 margin-top:15px;
 width:70px;
 height:40px;
@@ -24,6 +24,12 @@ background-color:gray;
 color:white;
 border-radius:10px 10px 10px 10px;
 }
+#buttonCreateAd:hover,#buttonEditAd:hover{
+width:80px;
+height:43px;
+font-size:17px;
+}
+
 #buttonLoginUser, #buttonRegisterUser{
 margin-right:20px;
 width:80px;
