@@ -22,6 +22,10 @@
     padding: 10px;
 }
 
+.form input {
+    margin: 0 auto;
+}
+
 #formCreateAd, #formEditAd {
     height: auto;
 }
