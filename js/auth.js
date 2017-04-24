@@ -33,7 +33,12 @@ function loginUser(e) {
         showMenuHideLinks();
         listItems();
         showInfo('Login successful.');
-        $('#loggedInUser').text('Welcome, ' + sessionStorage.getItem('username') + '!');
+        $('#loggedInUser').css({
+            "color": "white",
+            "float": "right",
+            "text-transform": "none",
+            "margin-top": "25px"
+        }).text('Welcome, ' + sessionStorage.getItem('username') + '!');
         $('#loggedInUser').show();
     }
 }
