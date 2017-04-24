@@ -40,6 +40,12 @@ function loginUser(e) {
 
 function registerUser(e) {
     e.preventDefault();
+    let password = $('#formRegister input[name=passwd]').val();
+    let confirm = $('#formRegister input[name=confirm]').val();
+    if (password !== confirm) {
+        showError('Password mismatch!');
+        return;
+    }
     let userData = {
         username: $('#formRegister input[name=username]').val(),
         password: $('#formRegister input[name=passwd]').val()
@@ -54,6 +60,7 @@ function registerUser(e) {
 
     $('#formRegister input[name=username]').val('');
     $('#formRegister input[name=passwd]').val('');
+    $('#formRegister input[name=confirm]').val('');
 
     function registerSuccess(userInfo) {
         saveAuthInSession(userInfo);

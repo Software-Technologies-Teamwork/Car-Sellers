@@ -6,16 +6,18 @@ text-align:center;
 display:inline;
 }
 .loadingBox, .infoBox, .errorBox{
-	margin-left:20px;
-	margin-right:40px;
+	margin: 0 20px;
+	text-align: center;
+	font-size: large;
 }
 .form{
 border: 1px solid gray;
 width:340px;
-height:220px;
+height:auto;
 margin: 50px auto;
 background-color:lightgray;
 text-align:center;
+padding: 10px;
 }
 #formCreateAd,#formEditAd{
 height: 400px;
@@ -23,7 +25,7 @@ height: 400px;
 #buttonCreateAd,#buttonEditAd{
 margin-top:15px;
 width:70px;
-height:40px;
+	height:40px;
 background-color:gray;
 color:white;
 border-radius:10px 10px 10px 10px;
@@ -35,8 +37,7 @@ font-size:17px;
 }
 
 #buttonLoginUser, #buttonRegisterUser{
-margin-right:20px;
-width:80px;
+margin: 0 auto
 }
 
 

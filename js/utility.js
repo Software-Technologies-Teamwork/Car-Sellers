@@ -13,7 +13,11 @@ function handleAjaxError(response) {
 
 function showError(errorMsg) {
     $('#errorBox').text("Error: " + errorMsg);
-    $('#errorBox').show();
+    $('#errorBox').show(function () {
+        setTimeout(function () {
+            $('#errorBox').fadeOut()
+        },3500)
+    });
 }
 
 function showInfo(message) {
