@@ -14,7 +14,10 @@ function listItems() {
 function loadAdsSuccess(adverts) {
     $('#ads').empty();
     if (adverts.length === 0) {
-        $('#ads').text('No adverts in the list.');
+        $('#ads').css({
+            "font-size": "xx-large",
+            "padding": "10px"
+        }).text('No adverts in the list.')
     } else {
         showInfo('Cars loaded.');
         let container = $('#ads');
@@ -25,7 +28,7 @@ function loadAdsSuccess(adverts) {
     }
     function appendCar(advert, container) {
         let links = [];
-        let readMoreLink = $('<a href="#">Read More</a>')
+        let readMoreLink = $('<a href="#">View car</a>')
             .click(displayAdvert.bind(this, advert._id));
 
         let ul = $('<ul>').append(
@@ -174,16 +177,21 @@ function listMyAds() {
         if (isHaveAds) {
             showInfo('Cars loaded.');
         } else {
-            $('#myAds').text('No adverts in the list.');
+            $('#myAds').css({
+                "font-size": "xx-large",
+                "padding": "10px"
+            }).text('No adverts in the list.');
         }
 
+
         function appendCar(advert, container) {
-            let links = [];
             let deleteLink = $('<a href="#">Delete</a>')
                 .click(deleteAdvert.bind(this, advert));
             let editLink = $('<a href="#">Edit</a>')
                 .click(loadAdvertForEdit.bind(this, advert));
-            links = [deleteLink, ' ' , editLink];
+            let readMoreLink = $('<a href="#">View car</a>')
+                .click(displayAdvert.bind(this, advert._id));
+            let links = [deleteLink, ' ' , editLink, ' ', readMoreLink];
 
             let ul = $('<ul>').append(
                 $('<li>').append($('<img>').attr({src: advert.image, width: "120px", height: "120px"})),
